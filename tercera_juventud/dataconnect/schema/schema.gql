@@ -1,0 +1,37 @@
+type User @table {
+  displayName: String!
+  createdAt: Timestamp!
+  email: String
+  photoUrl: String
+  lastLogin: Timestamp
+}
+
+type Platform @table {
+  name: String!
+  iconUrl: String!
+  description: String
+}
+
+type Module @table {
+  platform: Platform!
+  title: String!
+  order: Int!
+  description: String
+}
+
+type Lesson @table {
+  module: Module!
+  title: String!
+  type: String!
+  order: Int!
+  content: String
+  videoUrl: String
+  exerciseData: String
+}
+
+type Progress @table(key: ["user", "lesson"]) {
+  user: User!
+  lesson: Lesson!
+  completedAt: Timestamp!
+  isBookmarked: Boolean
+}

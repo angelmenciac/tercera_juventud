@@ -1,0 +1,29 @@
+query ListPublicPosts @auth(level: PUBLIC, insecureReason: "This operation is safe to expose to the public") {
+  posts {
+    id
+    title
+    content
+  }
+}
+
+query GetCurrentUserProfile @auth(level: USER) {
+  user(key: {uid_expr: "auth.uid"}) {
+    uid
+    displayName
+    email
+    profilePictureURL
+  }
+}
+
+mutation CreateNewPost($title: String!, $content: String!) @auth(level: USER) {
+  post_insert(data: {
+    title: $title,
+    content: $content,
+    authorUid_expr: "auth.uid",
+    createdAt_expr: "request.time"
+  })
+}
+
+mutation DeletePost($id: UUID!) @auth(expr: "auth.token.admin == true") {
+  post_delete(key: {id: $id})
+}

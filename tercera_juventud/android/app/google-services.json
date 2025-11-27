@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "370214043232",
+    "project_id": "tercera-juventud-97e12",
+    "storage_bucket": "tercera-juventud-97e12.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:370214043232:android:dc4884438d56b80af1cd05",
+        "android_client_info": {
+          "package_name": "com.example.tercera_juventud"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "370214043232-9o7q39ea4okqfpp0ts5vl0c464qkgu6d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCmfOHat-Zxea7HAOrm0n1u74jzV6TgK6A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "370214043232-9o7q39ea4okqfpp0ts5vl0c464qkgu6d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

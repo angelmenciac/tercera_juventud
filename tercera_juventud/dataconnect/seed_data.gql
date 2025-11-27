@@ -1,0 +1,69 @@
+mutation CreateSeedData @auth(level: PUBLIC, insecureReason: "This operation is intended for seeding data and does not require authentication") @transaction {
+  platform_insertMany(data: [
+    {
+      id: "757b596d-2463-4499-a29c-592a9c95e125",
+      name: "Web",
+      description: "Learn web development",
+      iconUrl: "https://example.com/web.png"
+    },
+    {
+      id: "c2589f4a-2a43-423d-b495-5b42b1c4f857",
+      name: "Mobile",
+      description: "Learn mobile development",
+      iconUrl: "https://example.com/mobile.png"
+    }
+  ])
+  module_insertMany(data: [
+    {
+      id: "8e2a7442-4a91-4a3f-9cb0-4c05d2954372",
+      platformId: "757b596d-2463-4499-a29c-592a9c95e125",
+      title: "HTML Basics",
+      description: "Learn the basics of HTML",
+      order: 1
+    },
+    {
+      id: "3c8e674c-9b27-4288-a2d1-a33846d097a9",
+      platformId: "757b596d-2463-4499-a29c-592a9c95e125",
+      title: "CSS Basics",
+      description: "Learn the basics of CSS",
+      order: 2
+    },
+    {
+      id: "9b1d7b2d-7b3a-4b7f-a1c6-5d9d9f6a5a49",
+      platformId: "c2589f4a-2a43-423d-b495-5b42b1c4f857",
+      title: "React Native Basics",
+      description: "Learn React Native",
+      order: 1
+    }
+  ])
+  lesson_insertMany(data: [
+    {
+      moduleId: "8e2a7442-4a91-4a3f-9cb0-4c05d2954372",
+      title: "HTML Tags",
+      content: "Learn about HTML tags",
+      type: "text",
+      order: 1
+    },
+    {
+      moduleId: "8e2a7442-4a91-4a3f-9cb0-4c05d2954372",
+      title: "HTML Attributes",
+      content: "Learn about HTML attributes",
+      type: "text",
+      order: 2
+    },
+    {
+      moduleId: "3c8e674c-9b27-4288-a2d1-a33846d097a9",
+      title: "CSS Selectors",
+      content: "Learn about CSS selectors",
+      type: "text",
+      order: 1
+    },
+    {
+      moduleId: "9b1d7b2d-7b3a-4b7f-a1c6-5d9d9f6a5a49",
+      title: "Components",
+      content: "Learn about React Native components",
+      type: "text",
+      order: 1
+    }
+  ])
+}
